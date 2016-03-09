@@ -14,7 +14,7 @@ if errorlevel 1 goto mod_update
 goto no_update
 
 :mod_update
-	echo mod update
+	
 :: Переход в папку tmp и удаляем старый архив.
 	cd "C:\Program Files\GIT\tmp\"
 	del /f /q "C:\Program Files\GIT\tmp\win_mods.zip"
@@ -53,12 +53,12 @@ goto no_update
 
 :: Иначе (если файлы версий совпадают то пишем в лог что нет обновления)		
 :no_update
-	echo no mod updates
+	
 	cd "C:\Program Files\GIT\log"
 	echo ============================================ >> "C:\Program Files\GIT\log\log.txt"
 	echo "Zabbix modules not updated (%date%    %time%)" >> "C:\Program Files\GIT\log\log.txt"
 	echo ============================================ >> "C:\Program Files\GIT\log\log.txt"
-
+	exit
 	
 :shell_update
 	:: Переход в папку с пакетами GIT и запускаем Shell Updater с ожиданием его окончания, для проверки обновлений компонентов заббикс модулей

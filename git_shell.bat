@@ -15,8 +15,7 @@ if errorlevel 1 goto shell_update
 goto no_update
 	
 :shell_update
-	echo shell update
-	
+		
 :: Переход в папку tmp и удаляем старый архив.
 	cd "C:\Program Files\GIT\tmp\"
 	del /f /q "C:\Program Files\GIT\tmp\win_shell.zip"
@@ -69,7 +68,7 @@ goto no_update
 
 :: Иначе если файлы версий совпадают то пишем в лог что нет обновления	
 :no_update
-	echo no shell updates
+	
 	cd "C:\Program Files\GIT\log"
 	echo ============================================ >> "C:\Program Files\GIT\log\log.txt"
 	echo "For Zabbix shells new updates not found  (%date%   %time%)" >> "C:\Program Files\GIT\log\log.txt"
@@ -78,4 +77,4 @@ goto no_update
 :exit
 cd ..
 :: Выход
-pause
+exit
