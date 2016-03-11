@@ -11,7 +11,6 @@ fc /W "C:\Program Files\GIT\tmp\mods_version.txt" "C:\zabbix-agent\_win_zabbix_m
 
 :: Если содержимое файлов отличается (значение 1) то переход на выполнение команд в скобках
 if errorlevel 1 goto mod_update
-goto shell_update
 goto no_update
 
 :mod_update
@@ -59,9 +58,9 @@ goto no_update
 	echo ============================================ >> "C:\Program Files\GIT\log\log.txt"
 	echo "Zabbix modules not updated (%date%    %time%)" >> "C:\Program Files\GIT\log\log.txt"
 	echo ============================================ >> "C:\Program Files\GIT\log\log.txt"
-	exit
 	
 :shell_update
 	:: Переход в папку с пакетами GIT и запускаем Shell Updater с ожиданием его окончания, для проверки обновлений компонентов заббикс модулей
 	cd "C:\Program Files\GIT\"
 	call "C:\Program Files\GIT\git_shell.bat"
+	exit
