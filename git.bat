@@ -11,6 +11,7 @@ fc /W "C:\Program Files\GIT\tmp\mods_version.txt" "C:\zabbix-agent\_win_zabbix_m
 
 :: Если содержимое файлов отличается (значение 1) то переход на выполнение команд в скобках
 if errorlevel 1 goto mod_update
+goto shell_update
 goto no_update
 
 :mod_update
